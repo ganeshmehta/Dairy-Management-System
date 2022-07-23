@@ -52,8 +52,33 @@ def index(request):
         
     elif 'print' in request.POST:
         db=Connection()
-        db.printData()
+        # db.printData()
         x,y=db.checkUser()
         context={'abc':y}
-        return render(request, 'index.html',context)
+        return render(request, 'base.html',context)
+
+    elif 'bata' in request.POST:
+        l=[]
+        m=[]
+        email=request.POST.get('email')
+        inv=request.POST.get('inv')
+        vehicle=request.POST.get('vehicle')
+        invno = request.POST.get('invno')
+        deliveryemail = request.POST.get('deliveryemail')
+        invby = request.POST.get('invby')
+        refno = request.POST.get('refno')
+        vatac = request.POST.get('vatac')
+        # context={'c1':check1,'c2':check2,'c3':check3}
+        # if(None in check1):
+        #     print("Shivam")
+        l=[email,inv,vehicle,invno,deliveryemail,invby,refno,vatac]
+        for i in l:
+            if i is not None:
+                m.append(i)
+        db=Connection()
+        db.displayData(m)
+        return render(request, 'index.html')
     return render(request, 'index.html',context)
+
+
+    

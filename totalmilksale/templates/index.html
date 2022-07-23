@@ -1,0 +1,156 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style3.css">
+    <title>Total Milk Sale Account Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #DDD;
+      }
+      tr:hover {background-color: #D6EEEE;}
+      </style>
+</head>
+<body style="background-color: white; color: darkolivegreen;">
+    <div class="container" style="background-color: white; border: white;">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 style='font-size: -webkit-xxx-large; font-weight: 400; color: black;'>Total Milk Sale</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <form action="/" method="post">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm" style='margin-right: 2%;' >Customer Email</span>
+                            <input type="email" class="form-control" name="email" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" style='margin-left: 2%; max-width: 50%;'>
+                        </div>
+                   
+                 
+                        <div class="input-group mb-3">
+                            <label class="input-group-text" for="inputGroupSelect01">Inv Date</label>
+                              <select class="form-select" id="inputGroupSelect01" name="inv" >
+                                  <option selected>Choose...</option>
+                                  <option value="1">One</option>
+                                  <option value="2">Two</option>
+                                  <option value="3">Three</option>
+                              </select>
+                        </div>
+                    
+                    
+                        <div class="input-group input-group-sm mb-3">
+                            <label class="input-group-text" for="inputGroupSelect01" >Vehicle_Details</label>
+                            <select class="form-select" id="inputGroupSelect01" name="vehicle" >
+                                <option selected >Choose...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+               
+                    
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm" >Inv No</span>
+                              <input type="text" class="form-control" aria-label="Sizing example input"
+                                  aria-describedby="inputGroup-sizing-sm" name="invno" style='margin-left: 2%; max-width: 50%;'>
+                        </div>
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm" >Delivered By</span>
+                            <input type="email" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" name="deliveryemail" style='margin-left: 2%; max-width: 50%;'>
+                        </div>
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm" >Inv By</span>
+                            <input type="email" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" name="invby" style='margin-left: 2%; max-width: 50%;'>
+                        </div>
+                    
+                    
+                        <div class="input-group input-group-sm mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-sm">Ref No</span>
+                                <input type="text" class="form-control" aria-label="Sizing example input"
+                                    aria-describedby="inputGroup-sizing-sm" name="refno" style='margin-left: 2%; max-width: 50%;'>
+                        </div>
+                  
+                    
+                        <div class="input-group input-group-sm mb-3">
+                            <label class="input-group-text" for="inputGroupSelect01" >VAT Account</label>
+                            <select class="form-select" id="inputGroupSelect01" name="vatac" >
+                                <option selected>Choose...</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                      
+                    </div>
+                    <button type="submit" class="btn btn-secondary m-md-3 w-20" name="add" style="color: black;">Add</button>
+                    <button type="submit" class="btn btn-success m-md-3 w-20" name="print" style="color: black;">Print</button>
+                    <button type="submit" class="btn btn-outline-dark m-md-3 w-20" name="update" style="color: black;">Update</button>
+                    <button type="submit" class="btn btn-warning  m-md-3 w-20" name="delete" style="color: black;">Delete</button>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <!-- Farmer's List -->
+                <div class="form-group">
+                 
+                        <label for="exampleFormControlTextarea1" class='py-6 text-lg text-md-center font-extrabold' style=' font-size: xx-large;
+                        font-weight: inherit;'>Farmer's List</label>
+                        <div class="table-responsive my-2 col-md-12">
+                            <table class="table table-striped table-sm space-x-2" style='color: darkolivegreen;'>
+                                <thead>
+                                    <tr>
+                                        <th>Customer Email</th>
+                                        <th>Inv Date</th>
+                                        <th>Vehicle Details</th>
+                                        <th>Inv No</th>
+                                        <th>Delivered By</th>
+                                        <th>Inv By</th>
+                                        <th>Reference No</th>
+                                        <th>VAT Account</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in abc %}
+                                    <tr>
+                                        {% for j in i %}
+                                        <td>{{j}}</td>
+                                        {% endfor %}
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

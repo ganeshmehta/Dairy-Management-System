@@ -4,7 +4,7 @@ import openpyexcel
 from django.http import HttpResponse
 class Connection:
     def __init__(self):
-        self.con = pm.connect(host='localhost', user='root',password='7774912010', database='lrcrud')
+        self.con = pm.connect(host='localhost', user='root',password='123456', database='djangocrud')
         self.cursor = self.con.cursor()
 
     def storeUser(self,code,itemcode,barcode,hsn,name,groupname,amtqty,packagingunit,loose,conv,crates,wholesale,retail,retailrt,sales,tax,taxontax,additionaltax,salesgroup,purchase,reorderstock,opstock,maxrate,recorder,loosestock,oprate,opamount):

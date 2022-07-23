@@ -39,9 +39,9 @@
                     {% csrf_token %}
                     <div class="form-row">
                         <div class="input-group mb-3">
-                            <span class="input-group-text" id="inputGroup-sizing-sm" style='margin-right: 2%;' >Customer Email</span>
-                            <input type="email" class="form-control" name="email" aria-label="Sizing example input"
-                                aria-describedby="inputGroup-sizing-sm" required style='margin-left: 2%; max-width: 50%;'>
+                            <span class="input-group-text" id="inputGroup-sizing-sm" >Customer phone</span>
+                            <input type="tel" class="form-control" name="email" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-sm" >
                         </div>
                    
                  
@@ -54,8 +54,6 @@
                                   <option value="3">Three</option>
                               </select>
                         </div>
-                    
-                    
                         <div class="input-group input-group-sm mb-3">
                             <label class="input-group-text" for="inputGroupSelect01" >Vehicle_Details</label>
                             <select class="form-select" id="inputGroupSelect01" name="vehicle" >
@@ -70,24 +68,24 @@
                         <div class="input-group input-group-sm mb-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm" >Inv No</span>
                               <input type="text" class="form-control" aria-label="Sizing example input"
-                                  aria-describedby="inputGroup-sizing-sm" name="invno" style='margin-left: 2%; max-width: 50%;'>
+                                  aria-describedby="inputGroup-sizing-sm" name="invno" >
                         </div>
                         <div class="input-group input-group-sm mb-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm" >Delivered By</span>
                             <input type="email" class="form-control" aria-label="Sizing example input"
-                                aria-describedby="inputGroup-sizing-sm" name="deliveryemail" style='margin-left: 2%; max-width: 50%;'>
+                                aria-describedby="inputGroup-sizing-sm" name="deliveryemail" >
                         </div>
                         <div class="input-group input-group-sm mb-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm" >Inv By</span>
                             <input type="email" class="form-control" aria-label="Sizing example input"
-                                aria-describedby="inputGroup-sizing-sm" name="invby" style='margin-left: 2%; max-width: 50%;'>
+                                aria-describedby="inputGroup-sizing-sm" name="invby" >
                         </div>
                     
                     
                         <div class="input-group input-group-sm mb-3">
                             <span class="input-group-text" id="inputGroup-sizing-sm">Ref No</span>
                                 <input type="text" class="form-control" aria-label="Sizing example input"
-                                    aria-describedby="inputGroup-sizing-sm" name="refno" style='margin-left: 2%; max-width: 50%;'>
+                                    aria-describedby="inputGroup-sizing-sm" name="refno" >
                         </div>
                   
                     
@@ -100,11 +98,10 @@
                                 <option value="3">Three</option>
                             </select>
                         </div>
-                      
                     </div>
                     <button type="submit" class="btn btn-secondary m-md-3 w-20" name="add" style="color: black;">Add</button>
-                    <button type="submit" class="btn btn-success m-md-3 w-20" name="save" style="color: black;">Save</button>
-                    <button type="submit" class="btn btn-outline-dark m-md-3 w-20" name="update" style="color: black;">Update</button>
+                    <button type="submit" class="btn btn-success m-md-3 w-20" name="print" style="color: black;">Print</button>
+                    <button type="submit" class="btn btn-outline-dark m-md-3 w-20" name="modify" style="color: black;">Update</button>
                     <button type="submit" class="btn btn-warning  m-md-3 w-20" name="delete" style="color: black;">Delete</button>
                 </form>
             </div>

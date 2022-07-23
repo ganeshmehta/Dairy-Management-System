@@ -1,0 +1,147 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../static/css/style3.css">
+    <title>Ledger Account Profile</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      th, td {
+        padding: 8px;
+        text-align: left;
+        border-bottom: 1px solid #DDD;
+      }
+      tr:hover {background-color: #D6EEEE;}
+      </style>
+</head>
+<body style="background-color: white; color: darkolivegreen;">
+    <div class="container" style="background-color: white; border: white;">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h1 style='font-size: -webkit-xxx-large; font-weight: 400; color: black;'>Ledger Account Profile</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-5">
+                <form action="/ledgeraccountprofile" method="post">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="accounttype">Account </label>
+                            <select id="accounttype" name="accounttype" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>Credit</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="input">Code</label>
+                            <input class="form-control" id="code" name="code" placeholder="Code">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        
+                        <div class="form-group col-md-4">
+                            <label for="ledgertype">Ledger Type</label>
+                            <input class="form-control" id="ledgertype" name="ledgertype" placeholder="Ledger Type">
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="subtedger">Subledger Type</label>
+                            <input class="form-control" id="subtedger" name="subtedger" placeholder="Subledger Type">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary m-md-3 w-25" name="addsubledger" style="color: black;">Add SubLedger</button>
+                    <div class="form-row">
+                        <div class="form-group col-md-4" style='width: 100%;'>
+                            <label for="party">Party</label>
+                            <input class="form-control" id="party" name="party" placeholder="Party">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="dept">Department </label>
+                            <select id="dept" name="dept" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>Kitchen</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="subdept">Sub Department </label>
+                            <select id="subdept" name="subdept" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>Veg</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4">
+                            <label for="grp">Group </label>
+                            <select id="grp" name="grp" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>Colddrink</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="subgrp">Sub Group </label>
+                            <select id="subgrp" name="subgrp" class="form-control">
+                                <option selected>Choose...</option>
+                                <option>Slice</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary m-md-3 w-25" name="add" style="color: black;">Add</button>
+                    <button type="submit" class="btn btn-success m-md-3 w-25" name="save" style="color: black;">Save</button>
+                    <button type="submit" class="btn btn-outline-dark m-md-3 w-25" name="update" style="color: black;">Update</button>
+                    <button type="submit" class="btn btn-warning  m-md-3 w-25" name="delete" style="color: black;">Delete</button>
+                    <button type="submit" class="btn btn-danger  m-md-3 w-25" name="exit" style="color: black;">Exit</button>
+                </form>
+            </div>
+            <div class="col-md-7">
+                <!-- Farmer's List -->
+                <div class="form-group">
+                        <label for="exampleFormControlTextarea1" class='py-6 text-lg text-md-center font-extrabold' styke='color: black;'>Farmer's List</label>
+                        <div class="table-responsive my-2 col-md-12">
+                            <table class="table table-striped table-sm space-x-2" style='color: darkolivegreen;'>
+                                <thead>
+                                    <tr>
+                                        <th>Ledger List</th>
+                                        <th>Sub Ledger List</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {% for i in abc %}
+                                    <tr>
+                                        {% for j in i %}
+                                        <td>{{j}}</td>
+                                        {% endfor %}
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+</html>

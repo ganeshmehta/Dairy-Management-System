@@ -5,7 +5,7 @@ import openpyexcel
 
 class Connection:
     def __init__(self):
-        self.con = pm.connect(host='localhost', user='root',password='7774912010', database='lrcrud')
+        self.con = pm.connect(host='localhost', user='root',password='123456', database='djangocrud')
         self.cursor = self.con.cursor()
 
     def storeUser(self,email,inv,vehicle,invno,deliveryemail,invby,refno,vatac):
@@ -77,3 +77,27 @@ class Connection:
         # read the data
         df=sql.read_sql('select * from sample',self.con)
         df.to_excel('dairyapp.xlsx')
+    
+    def displayData(self,m):
+        n=len(m)
+        stringcolumn=''
+        for i in m:
+            stringcolumn+=i+' '
+        s = stringcolumn.split()
+        print(m)
+        l = []
+        m = set(m)
+        a = ''
+        # for i in range(len(m)):
+        #     a += '%s'
+        # sql = "select {} from sample".format(m)
+        # self.cursor.execute(sql)
+        # mt=self.cursor.fetchall()
+        # print(mt)
+        for i in m:
+            sql = "select '%s' from sample"%(i)
+            self.cursor.execute(sql)
+            mt=self.cursor.fetchall()
+            l.append(mt)
+        print(l)
+# database connectivity file

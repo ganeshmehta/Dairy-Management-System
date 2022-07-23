@@ -5,7 +5,7 @@ import openpyexcel
 
 class Connection:
     def __init__(self):
-        self.con = pm.connect(host='localhost', user='root',password='7774912010', database='lrcrud')
+        self.con = pm.connect(host='localhost', user='root',password='123456', database='djangocrud')
         self.cursor = self.con.cursor()
 
     def storeUser(self,code,first,middle,last,address,ap,village,city,taluka,district,state,aadhar,phone):

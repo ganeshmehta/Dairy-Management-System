@@ -27,9 +27,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-$ch!xe!90#ko(#oz-9pbml=by-3(=sm+#46vc+z2y=5y+&4by&'
 # SECRET_KEY=os.environ['SECRET_KEY']
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG =True
 
-ALLOWED_HOSTS = ["localhost","diary132.herokuapp.com"]
+ALLOWED_HOSTS = ["localhost","diary132.herokuapp.com",]
 
 
 # Application definition
@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'dairyapp',
     'accountprofile',
     'accountdetail',
+    'totalmilksale',
+    'ledgeraccountprofile',
 ]
 
 MIDDLEWARE = [
